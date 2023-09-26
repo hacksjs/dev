@@ -1,0 +1,58 @@
+= Compatibility
+
+The https://docs.hacksjs.com[Hacks.js User Documentation] web site lists the JavaScript runtime environments — on both the client-side, in web browser, and server-side environments like Node — with which Hacks.js packages are compatible.
+
+This document sets out our policy on compatible production environments in more general terms.
+
+== Web browsers
+
+== Node
+
+Hacks.js packages target https://github.com/nodejs/Release[long-term support (LTS) versions of Node] only. Our policy is as follows:
+
+At the time of release of a new major version of a Node.js package, the package will support Node's "active" LTS release plus at least one previous LTS release that remains under "maintenance". For each supported LTS version of Node, our support will begin with the first minor version of Node to be given the LTS tag.
+
+For example, if a new production-grade package (or a new major version of an existing package) were released in May 2023, this policy would equate to the package supporting the following Node versions:
+
+- ^18.12.0 (active LTS as of May 2023)
+- ^16.13.0 (maintenance LTS as of May 2023)
+
+Earlier maintenance LTS versions of Node, such as ^14.15.0, MAY be supported too.
+
+Over time, as Node introduces new LTS releases and deprecates old ones, the package will incrementally add support for the new LTS releases and deprecate its support for the legacy Node releases. However, we will not automatically drop support for major Node releases when they reach their end-of-life, and discontinuation of support for a major Node version will correspond with a major version bump in the Hacks.js packages.
+
+The Hacks.js project does not officially support the short-lived "current" releases of Node, nor any of the odd-numbered released (v13, v15, etc). Hacks.js targets only Node's long-lived, production-grade LTS releases. These are Node's even-numbered releases. This policy in in keeping with the Node Foundation's own recommendation:
+
+[quote, Node Foundation, https://nodejs.org/en/about/releases/]
+____
+Production applications should only use Active LTS or Maintenance LTS releases.
+____
+
+Nevertheless, it is expected that most Hacks.js package will work perfectly well in the latest "current" release of Node, even though we do not officially support this. That's because our testing infrastructure is configured to run all our test suites in Node's "current" release as well as the officially-supported "LTS" releases. The purpose of this is not to _support_ those Node versions, but rather to provide an early warning system for future compatibility issues.
+
+////
+
+Dropping support for a major Node version is considered a breaking change. For this reason, whenever the Hacks.js project drops support for a major Node version, the major version of _every_ Hacks.js package will be bumped, in keeping with "semantic versioning" principles. This is done rarely. Our preference is for major versions of `@hacksjs` packages to be as long-lasting as possible.
+
+////
+
+In general, the "engines" constraint – defined in the `package.json` files of every Hacks.js package – is _advisory_ information, only. Ultimately, it is the responsibility of consumers to ensure that Hacks.js packages work as expected in whatever runtime environments they are used.
+
+----
+{
+  "engines": {
+    "node": "^14.15.0 || ^16.13.0" || ^18.12.0
+  }
+}
+----
+
+[NOTE]
+====
+The requirements for our development environments are more constrained. Typically in development we will use only the most up-to-date versions of Node's "active LTS" release, plus the latest iteration of the NPM package manager.
+
+We will bump the Node version used in development as-and-when required to support tool upgrades.
+====
+
+== Deno and Bun
+
+These runtime environments are not _officially_ supported yet, but we plan to include these in our test runs in the near-future.

@@ -1,1 +1,7 @@
 = Policies
+
+* link:./coding-standards.adoc[Coding standards]
+* link:./compatibility.adoc[Compatibility]
+* link:./long-term-support.adoc[Long-term support]
+* link:./dependencies.adoc[Dependencies]
+* link:./version-numbering.adoc[Version numbering]

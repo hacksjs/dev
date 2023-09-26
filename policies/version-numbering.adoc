@@ -1,0 +1,43 @@
+= Version numbering
+
+As per convention in the JavaScript ecosystem, the Hacks.js project uses the https://semver.org/[Semantic Versioning] strategy.
+
+The format for semantic version numbers is:
+
+----
+[major].[minor].[patch]
+----
+
+* The `[major]` version number MUST be bumped whenever changes to a package's API breaks backwards compatibility.
+* The `[minor]` version number MUST be bumped whenever new functionality is added in a backwards-compatible manner.
+* The `[patch]` number SHOULD be bumped for bug fixes and non-functional improvements, and any other changes that do not alter the external interfaces or internal behaviors of the software, such as code refactoring.
+
+== Version zero
+
+`v0.x.x` releases of Hacks.js packages do not need to comply with the Semantic Versioning rules. Updates to a version zero release MAY include breaking changes. Only once a package reaches `v1.0.0` milestone do the Semantic Versioning constraints start to apply.
+
+Version zero is used to deliver preview releases of forthcoming Hacks.js packages. These releases are considered to be unstable and SHOULD NOT be used in production environments.
+
+== Pre-releases
+
+The Semantic Versioning standard does not specify a numbering system for pre-releases such as alpha, beta and release candidate builds. However, NPM's pre-release convention has become the _de facto_ standard for JavaScript packages. The naming convention is as follows:
+
+----
+v[major].[minor].[patch]-[stage].[inc]
+----
+
+* `[stage]` is the word "alpha" or "beta".
+* `[inc]` is the increment number of the alpha or beta release of the given semantic version.
+
+Here's an example chronology of releases, including pre-releases:
+
+1. `v1.0.0-alpha.0`
+2. `v1.0.0-alpha.1`
+3. `v1.0.0-alpha.2`
+4. `v1.0.0-beta.0`
+5. `v1.0.0-beta.1`
+6. `v1.0.0`
+7. `v1.1.0-alpha.0`
+8. `v1.1.0-alpha.1`
+9. `v1.1.0-beta.0`
+10. `v1.1.0`

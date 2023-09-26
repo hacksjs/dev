@@ -1,0 +1,17 @@
+= Coding standards
+
+The low-level coding conventions for the Hacks.js project are encoded in a shareable ESLint config.
+
+In general, we prefer terse declarative code over a verbose imperative style. But we err on the side of clarity over brevity.
+
+We err on the side of convention over configuration, yet the level of abstraction is low and transparent – no black magic or idiosyncratic ideas.
+
+Complexity of the overall system is reduced by consistent formatting and identifier naming, and by relying on a small pool of evergreen design patterns.
+
+////
+
+== Prettier
+
+TODO: Explain this is too opinionated and destructive for our needs.
+
+////
