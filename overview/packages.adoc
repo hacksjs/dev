@@ -1,0 +1,9 @@
+= Packages
+
+The `@hacksjs` namespace consists of three packages:
+
+* `@hacksjs/node`
+* `@hacksjs/universal`
+* `@hacksjs/web`
+
+Each package is developed independently via a dedicated link:./package-repositories[repository].

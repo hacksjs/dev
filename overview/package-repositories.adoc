@@ -1,0 +1,9 @@
+= Package repositories
+
+The `@hacksjs/*` link:./packages.adoc[packages] are maintained independently of one another. For this reason, rather than using a mono-repo, each package is encapsulated in a dedicated repository.
+
+The package repositories are:
+
+* https://github.com/hacksjs/node
+* https://github.com/hacksjs/universal
+* https://github.com/hacksjs/web
