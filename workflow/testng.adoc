@@ -1,0 +1,59 @@
+= Testing
+
+Each of the link:../overview/package-repositories.adoc[package repositories] includes run-scripts to automate static analysis of the source code and runtime testing of the compiled artifacts.
+
+== Runtime testing
+
+The automated tests are run against the build, rather than the source code. Therefore, to run the tests, you must run the build first. From the package repository, run:
+
+----
+npm run build
+----
+
+If the build is reported as successful, you can run the tests against it. Use the following command to run all of the available automated tests:
+
+----
+npm run test
+----
+
+For most of the packages, the full test suite is composed of:
+
+* Unit tests
+* Integration tests
+* Type tests (for verification of the compiled `*.d.ts` files)
+
+You can run these individually. For example, to run only the type tests:
+
+----
+npm run test:type
+----
+
+Of all the tests, the unit tests are the most effective way to protect against regressions as you extend and refactor the source code.
+
+----
+npm run test:unit
+----
+
+We aim to have 100% unit test coverage across all metrics. To verify the coverage:
+
+----
+npm run test:unit:coverage
+----
+
+The coverage reports will be generated in a directory called `coverage`.
+
+During development, you might like to keep running the tests in the background in response to changes to source files. To run the tests in "watch" mode:
+
+----
+npm run test:unit:coverage
+----
+
+== Static analysis
+
+Use the following command to run the linter:
+
+----
+npm run lint
+----
+
+The linter is run against the source code, therefore it is not necessary to run the build step beforehand.

@@ -1,1 +1,3 @@
 = Workflow
+
+* link:./testing.adoc[Testing]
