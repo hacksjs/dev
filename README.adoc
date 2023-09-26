@@ -1,5 +1,7 @@
 = Hacks.js Developer Documentation
 
+WARNING: The Hacks.js project is currently in a pre-release state and therefore some of this documentation will not be wholly accurate at this time.
+
 The following documentation is for maintainers and contributors of the Hacks.js open source software project.
 
 * link:./overview[Overview] — A high level view of this project's architecture.
