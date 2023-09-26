@@ -1,0 +1,9 @@
+= Package publication workflow
+
+////
+TODO: How we use NPM tags - https://dev.to/andywer/how-to-use-npm-tags-4lla
+////
+
+////
+TODO: Note that we only publish "pure ESM" packages. But we may consider deploying web-ready bundles via CDNs in the future - to be decided.
+////

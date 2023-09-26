@@ -2,5 +2,6 @@
 
 * link:./branching-and-merging.adoc[Branching and merging]
 * link:./building.adoc[Building]
+* link:./publishing.adoc[Publishing]
 * link:./run-scripts.adoc[Run-scripts]
 * link:./testing.adoc[Testing]
