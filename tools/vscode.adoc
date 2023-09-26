@@ -1,0 +1,5 @@
+= Visual Studio Code
+
+Although contributors are free to use a code editor of their choice, it is strongly RECOMMENDED to use https://code.visualstudio.com/[Visual Studio Code] for a consistent development environment.
+
+The link:../overview/package-repositories.adoc[package repositories] include a `.vscode` directory that defines settings and recommended extensions. When you clone the package repositories, these settings will be applied to your IDE when you open the repository directory in VS Code.

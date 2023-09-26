@@ -1,0 +1,7 @@
+= NPM
+
+Contributors MUST use the Node Package Manager (`npm`) for performing development tasks.
+
+`npm` ^9.8.0 is REQUIRED.
+
+Contributors MUST NOT use alternative package managers such as Yarn.

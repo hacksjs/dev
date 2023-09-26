@@ -1,0 +1,17 @@
+= ESLint
+
+To use ESLint in VS Code, install the ESLint extension and add the following to your VS Code settings. This enables support of the new flat file configuration format, `eslint.config.js`, available since ESLint v8.21, which is what we use in the Hacks.js project.
+
+----
+{
+  "eslint.experimental.useFlatConfig": true
+}
+----
+
+Optionally, you may enable the following setting, which will enable ESLint as a code formatter in VS Code, making it easier to quickly fix formatting errors:
+
+----
+{
+  "eslint.format.enable": true
+}
+----

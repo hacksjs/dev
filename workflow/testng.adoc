@@ -42,7 +42,7 @@ npm run test:unit:coverage
 
 The coverage reports will be generated in a directory called `coverage`.
 
-During development, you might like to keep running the tests in the background in response to changes to source files. To run the tests in "watch" mode:
+During development, you might like to keep re-running relevant tests in the background whenever changes are saved to their corresponding source files. To run the tests in "watch" mode:
 
 ----
 npm run test:unit:coverage

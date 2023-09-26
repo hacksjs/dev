@@ -1,0 +1,5 @@
+= TypeScript
+
+Although the source code for all Hacks.js packages is written in plain vanilla JavaScript, we support TypeScript applications by shipping every Hacks.js package with a TypeScript-compliant type declaration file (`*.d.ts).
+
+The type declaration files are built automatically by the TypeScript compiler (`tsc`) from type information encoded in a https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html[JSDoc subset] in comment blocks in the JavaScript source code.
