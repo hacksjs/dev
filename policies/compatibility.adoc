@@ -4,9 +4,23 @@ The https://docs.hacksjs.com[Hacks.js User Documentation] web site lists the Jav
 
 This document sets out our policy on compatible production environments in more general terms.
 
-== Web browsers
+== "Pure ESM" packages
 
-== Node
+At this time, all publicly-distributed Hacks.js packages export only standard ECMAScript Modules (ESM). We do not ship CommonJS modules or any other non-standard module format. We do not ship pre-bundled web builds either.
+
+Not all JavaScript/TypeScript applications and tools are yet compatible with ESM. That's because may legacy projects are written in Node's legacy, proprietary CommonJS-based module format, which uses non-standard `require()` and `exports` APIs. Standard ECMAScript modules cannot be directly imported to CommonJS scripts using `require()`.
+
+If you are want to consume Hacks.js packages in the context of an old JavaScript code base, you may need to introduce a transpilation step to transform the Hacks.js packages into a compatible format. Sindre Sorhus maintains a useful document that explains how to do this, and solve other common problems encountered on the road to ESM, https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c[here].
+
+== Web browser compatibility
+
+Out-of-the-box (ie without a transpilation step), Hacks.js are expected to work with current releases of all mainstream desktop and mobile web browsers. Specifically, our support policy is as follows:
+
+////
+TODO: List major web browsers and the number of versions "back" we support.
+////
+
+== Node compatibility
 
 Hacks.js packages target https://github.com/nodejs/Release[long-term support (LTS) versions of Node] only. Our policy is as follows:
 
@@ -17,7 +31,7 @@ For example, if a new production-grade package (or a new major version of an exi
 - ^18.12.0 (active LTS as of May 2023)
 - ^16.13.0 (maintenance LTS as of May 2023)
 
-Earlier maintenance LTS versions of Node, such as ^14.15.0, MAY be supported too.
+NOTE: Node v16 is the first LTS release to natively support standard ECMAScript Modules. For this reason, v16.13.0 is the earliest version of Node to be officially supported by the Hacks.js project. An additional transpilation step will be needed to `require()` Hacks.js packages in CommonJS modules running in Node v14.15.0 LTS or earlier.
 
 Over time, as Node introduces new LTS releases and deprecates old ones, the package will incrementally add support for the new LTS releases and deprecate its support for the legacy Node releases. However, we will not automatically drop support for major Node releases when they reach their end-of-life, and discontinuation of support for a major Node version will correspond with a major version bump in the Hacks.js packages.
 
@@ -53,6 +67,6 @@ The requirements for our development environments are more constrained. Typicall
 We will bump the Node version used in development as-and-when required to support tool upgrades.
 ====
 
-== Deno and Bun
+== Deno and Bun compatibility
 
 These runtime environments are not _officially_ supported yet, but we plan to include these in our test runs in the near-future.
