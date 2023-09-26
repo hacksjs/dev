@@ -1,0 +1,10 @@
+= Run-scripts
+
+Each link:../overview/package-repository.adoc[package repository] includes a suite of run-scripts to automate repeatable aspects of the package's development life cycle.
+
+Run-scripts are commands that are executed using `npm run` from the context of the repository's directory. They are defined in the repository-level `package.json` manifest, against the `scripts` key. For more information, see the https://docs.npmjs.com/cli/v7/using-npm/scripts[NPM docs].
+
+Available run-scripts include `npm run build` and `npm run test`. Details of available run-scripts are included in the following documents:
+
+* link:./building.adoc[Building]
+* link:./testing.adoc[Testing]

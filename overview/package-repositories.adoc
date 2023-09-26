@@ -7,3 +7,93 @@ The package repositories are:
 * https://github.com/hacksjs/node
 * https://github.com/hacksjs/universal
 * https://github.com/hacksjs/web
+
+== Branching and merging
+
+The package repositories have a default main branch called `v*/dev`. From this branch, a specific Git workflow is followed to introduce changes in code and configuration. See the documentation on link:../workflow/branching-and-merging.adoc[branching and merging].
+
+== Run-scripts
+
+Each of the package registries have a number of run-scripts to automate aspects of the development life cycle. Run-scripts are commands that are executed from the `npm run *` CLI. For a list of available commands see the documentation on link:../workflow/run-scripts.adoc[run-scripts].
+
+== Filesystem
+
+The package repositories have the following filesystem structure.
+
+----
+.
+│
+├─ (dist)
+├─ (node_modules)
+├─ lib
+│  └─ **/*.js
+├─ perf
+│  └─ **/*.js
+├─ run
+│  └─ **/*.js
+├─ src
+│  ├─ bin/**/*.js
+│  ├─ lib/**/*.js
+│  ├─ CHANGELOG.md
+│  ├─ LICENSE.txt
+│  ├─ package.json
+│  └─ README.md
+├─ test
+├─ try
+├─ www
+│
+├─ .editorconfig
+├─ .gitattributes
+├─ .github
+├─ …
+│
+├─ LICENSE.txt
+├─ package.json
+└─ README.adoc
+----
+
+=== Root-level files
+
+The root-level directory of each package repository contains a README and LICENSE file plus some configuration files for various development tools.
+
+We previously included a `.vscode` directory, which encapsulated recommended VS Code extensions and local settings. This configuration is now provided via the link:./workspace.adoc[Workspace] configuration.
+
+=== Manifests (`package.json`)
+
+In general, `package.json` files serve two purposes:
+
+* They provide metadata for shareable JavaScript packages.
+* They define development dependencies, run-scripts and other configurations to automate the development, testing, building and distribution of those packages.
+
+It is best practice to separate these two concerns. This means having separate `package.json` files for each.
+
+It is for this reason that each Hacks.js package repositories contains two `package.json` files:
+
+* A "repository manifest" at the root level (`./package.json`).
+* A "package manifest" in the source directory (`./src/package.json`).
+
+=== The `src` directory
+
+The source directory encapsulates the source code and configuration from which the distributable package artifacts are built.
+
+Only the contents of the `src` directory will be transformed to a distributable bundle. No other contents of the package repository — not even the tests — will be included in the distributable package builds.
+
+The structure of the `src` directory is designed to mirror the final structure of the distributed package. Therefore, after running the build step, the `src` and `dist` directories should look very similar. In fact, some of the `src` files, such as the README, may be copied verbatim into `dist`. However, most of the source files will undergo some sort of transformation in the build step.
+
+=== The `dist` directory
+
+When the build step is run — either locally or via a remote server — the contents of the `src` directory will be compiled to a distributable package build, the contents of which will be temporarily placed in the `dist` directory, from where they can be subsequently published to the package registries.
+
+The contents of the `dist` directory are excluded from source control.
+
+=== The `test` directory
+
+Automated test scripts are encapsulated in the test directory.
+
+Tests are not included in the distributable package builds.
+
+=== The `run` directory
+
+=== The `lib` directory
+
+=== The `www` directory

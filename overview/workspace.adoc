@@ -1,0 +1,6 @@
+= Workspace
+
+////
+TODO: Explain the importance of the workspace repository.
+TODO: Add a "getting started" page which explains how to use the workspace repository to get setup quickly. This is really only for maintainers, however.
+////

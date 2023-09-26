@@ -2,3 +2,6 @@
 
 * link:./packages.adoc[Packages]
 * link:./package-repositories.adoc[Package repositories]
+* link:./package-registries.adoc[Package registries]
+* link:./repositories.adoc[Repositories]
+* link:./workspace.adoc[Workspace]

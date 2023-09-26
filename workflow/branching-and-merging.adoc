@@ -1,0 +1,7 @@
+= Branching and merging
+
+Most of the Hacks.js link:../overview/repositories.adoc[repositories] have a `main` branch. The repositories do not follow any particular source control workflow. However, the three link:../overview/package-repositories.adoc[package repositories], from which the `@hacksjs/*` packages are build and distributed, _do_ follow a specific branching-and-merging strategy.
+
+////
+TODO: Summarize the Git workflow.
+////
