@@ -1,0 +1,3 @@
+= Contributing
+
+* link:./acknowledgements.adoc[Acknowledgements]

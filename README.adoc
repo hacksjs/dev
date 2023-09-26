@@ -1,1 +1,11 @@
 = Hacks.js Developer Documentation
+
+The following documentation is for maintainers and contributors of the Hacks.js open source software project.
+
+* link:./overview[Overview] — A high level view of this project's architecture.
+* link:./contributing[Contributing] — How to get involved in the Hacks.js project.
+* link:./workflow[Workflow] — How we manage changes to source code, test scripts and documentation.
+* link:./tools[Tools] — Development tools and other infrastructure we use to develop and maintain Hacks.js packages.
+* link:./policies[Policies] — Coding standards, version numbering, runtime system compatibility, etc.
+
+TIP: See also this project's link:https://github.com/hacksjs/decisions[Decision Log] for current proposals and past design decisions.
